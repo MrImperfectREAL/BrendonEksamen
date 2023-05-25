@@ -65,7 +65,7 @@ namespace BrendonEksamen
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select fornavn,etternavn,adresse,postnr,klasseid,fagnavn from elev,fag,fagelev\r\nwhere fagelev.elevid = elev.elevid\r\nand fagelev.fagkode = fag.fagkode\r\nand fag.fagnavn = @fagNavn", conn);
+                SqlCommand cmd = new SqlCommand("SELECT fornavn,etternavn,adresse,postnr,klasseid,fagnavn FROM elev,fag,fagelev WHERE fagelev.elevid = elev.elevid AND fagelev.fagkode = fag.fagkode AND fag.fagnavn = @fagNavn", conn);
                 cmd.CommandType = CommandType.Text;
 
                 //params here
@@ -91,7 +91,7 @@ namespace BrendonEksamen
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Elev.Fornavn, Elev.Etternavn, Klasse.KlasseNavn FROM Elev INNER JOIN Klasse ON Elev.KlasseID = Klasse.KlasseID\r\nWHERE (Klasse.KlasseNavn = @klasseNavn OR @klasseNavn = '')", conn);
+                SqlCommand cmd = new SqlCommand("SELECT Elev.Fornavn, Elev.Etternavn, Klasse.KlasseNavn FROM Elev INNER JOIN Klasse ON Elev.KlasseID = Klasse.KlasseID WHERE (Klasse.KlasseNavn = @klasseNavn OR @klasseNavn = '')", conn);
                 cmd.CommandType = CommandType.Text;
 
                 //params here
@@ -118,7 +118,7 @@ namespace BrendonEksamen
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select fornavn,etternavn,adresse,postnr,klassenavn,fagnavn from elev,fag,fagelev,klasse\r\nwhere fagelev.elevid = elev.elevid\r\nand fagelev.fagkode = fag.fagkode\r\nand elev.klasseid = klasse.klasseid\r\nand klasse.klasseNavn = @klasseNavn\r\nand fag.fagnavn = @fagNavn", conn);
+                SqlCommand cmd = new SqlCommand("SELECT fornavn,etternavn,adresse,postnr,klassenavn,fagnavn FROM elev,fag,fagelev,klasse WHERE fagelev.elevid = elev.elevid AND fagelev.fagkode = fag.fagkode and elev.klasseid = klasse.klasseid AND klasse.klasseNavn = @klasseNavn and fag.fagnavn = @fagNavn", conn);
                 cmd.CommandType = CommandType.Text;
 
                 //params here
