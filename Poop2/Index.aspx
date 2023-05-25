@@ -43,7 +43,7 @@
                   <p>Fag</p>
                   <asp:TextBox ID="TextBoxByFagNavn" runat="server"></asp:TextBox>
                   <br/>
-                  <asp:Button ID="ButtonSearchByKlasseofFag" runat="server" Text="Søk" OnClick="ButtonSearchByKlasseogFag_Click" />
+                  <asp:Button ID="ButtonSearchByKlasseogFag" runat="server" Text="Søk" OnClick="ButtonSearchByKlasseogFag_Click" />
                   <asp:GridView ID="GridViewByKlasseogFag" runat="server">
                   </asp:GridView>
                </div>
